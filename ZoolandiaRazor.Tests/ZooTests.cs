@@ -51,5 +51,70 @@ namespace ZoolandiaRazor.Tests
         {
             Assert.IsNotNull(repo);
         }
+        [TestMethod]
+        public void RepoHasContext()
+        {
+            Assert.IsNotNull(repo.Context);
+        }
+        [TestMethod]
+        public void RepoHasNoAnimals()
+        {
+            ConnectMocksToDatastore();
+
+            List<Animal> animals = repo.GetAnimals();
+            int expected_animal_count = 0;
+            int actual_animal_count = animals.Count;
+
+            // Assert
+            Assert.AreEqual(expected_animal_count, actual_animal_count);
+        }
+        [TestMethod]
+        public void RepoCanAddAnimalToDatabase()
+        {
+            ConnectMocksToDatastore();
+            Animal newAnimal = new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 };
+
+            repo.AddAnimal(newAnimal);
+
+            int actual_animal_count = repo.GetAnimals().Count;
+            int expected_animal_count = 1;
+
+            Assert.AreEqual(expected_animal_count, actual_animal_count);
+        }
+        [TestMethod]
+        public void RepoCanFindAnimal()
+        {
+            animalList.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 });
+            animalList.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", HabitatId = 3, Age = 20 });
+            animalList.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", HabitatId = 8, Age = 305 });
+            ConnectMocksToDatastore();
+
+            int animalId = 2;
+            Animal actual_animal = repo.Find(animalId);
+
+            int expected_animal_id = 2;
+            int actual_animal_id = actual_animal.AnimalId;
+            Assert.AreEqual(expected_animal_id, actual_animal_id);
+
+        }
+        [TestMethod]
+        public void RepoCanGetAllAnimals()
+        {
+            animalList.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 });
+            animalList.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", HabitatId = 3, Age = 20 });
+            animalList.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", HabitatId = 8, Age = 305 });
+            ConnectMocksToDatastore();
+
+            List<Animal> expected_animal_list = new List<Animal>();
+            expected_animal_list.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 });
+            expected_animal_list.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", HabitatId = 3, Age = 20 });
+            expected_animal_list.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", HabitatId = 8, Age = 305 });
+
+            List<Animal> actual_animal_list = repo.GetAnimals();
+
+            Assert.AreEqual(expected_animal_list, actual_animal_list);
+
+
+        }
     }
 }

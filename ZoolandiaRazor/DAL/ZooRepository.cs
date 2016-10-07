@@ -14,5 +14,24 @@ namespace ZoolandiaRazor.DAL
             this.Context = context;
         }
 
+        public List<Animal> GetAnimals()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddAnimal(Animal newAnimal)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Animal Find(string animalName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Animal Find(int animalId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
