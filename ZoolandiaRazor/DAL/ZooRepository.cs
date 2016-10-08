@@ -16,52 +16,53 @@ namespace ZoolandiaRazor.DAL
 
         public List<Animal> GetAnimals()
         {
-            throw new NotImplementedException();
+            return Context.Animals.ToList();
         }
 
         public void AddAnimal(Animal newAnimal)
         {
-            throw new NotImplementedException();
-        }
-
-        public Animal Find(string animalName)
-        {
-            throw new NotImplementedException();
+            Context.Animals.Add(newAnimal);
+            Context.SaveChanges();
         }
 
         public Animal FindAnimal(int animalId)
         {
-            throw new NotImplementedException();
+            Animal foundIt = Context.Animals.FirstOrDefault(a => a.AnimalId == animalId);
+            return foundIt;
         }
 
         public List<Habitat> GetHabitats()
         {
-            throw new NotImplementedException();
+            return Context.Habitats.ToList();
         }
 
         public void AddHabitat(Habitat newHabitat)
         {
-            throw new NotImplementedException();
+            Context.Habitats.Add(newHabitat);
+            Context.SaveChanges();
         }
 
         public Habitat FindHabitat(int habitatId)
         {
-            throw new NotImplementedException();
+            Habitat foundIt = Context.Habitats.FirstOrDefault(a => a.HabitatId == habitatId);
+            return foundIt;
         }
 
         public List<Employee> GetEmployees()
         {
-            throw new NotImplementedException();
+            return Context.Employees.ToList();
         }
 
         public void AddEmployee(Employee newEmployee)
         {
-            throw new NotImplementedException();
+            Context.Employees.Add(newEmployee);
+            Context.SaveChanges();
         }
 
         public Employee FindEmployee(int employeeId)
         {
-            throw new NotImplementedException();
+           Employee foundIt = Context.Employees.FirstOrDefault(a => a.EmployeeId == employeeId);
+            return foundIt;
         }
     }
 }

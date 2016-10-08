@@ -96,7 +96,6 @@ namespace ZoolandiaRazor.Tests
             int expected_animal_count = 0;
             int actual_animal_count = animals.Count;
 
-            // Assert
             Assert.AreEqual(expected_animal_count, actual_animal_count);
         }
         [TestMethod]
@@ -108,7 +107,6 @@ namespace ZoolandiaRazor.Tests
             int expected_habitat_count = 0;
             int actual_habitat_count = habitats.Count;
 
-            // Assert
             Assert.AreEqual(expected_habitat_count, actual_habitat_count);
         }
         [TestMethod]
@@ -120,7 +118,6 @@ namespace ZoolandiaRazor.Tests
             int expected_employee_count = 0;
             int actual_employee_count = employees.Count;
 
-            // Assert
             Assert.AreEqual(expected_employee_count, actual_employee_count);
         }
         [TestMethod]
@@ -136,6 +133,7 @@ namespace ZoolandiaRazor.Tests
 
             Assert.AreEqual(expected_animal_count, actual_animal_count);
         }
+        [TestMethod]
         public void RepoCanAddHabitatToDatabase()
         {
             ConnectMocksToDatastore();
@@ -148,6 +146,7 @@ namespace ZoolandiaRazor.Tests
 
             Assert.AreEqual(expected_habitat_count, actual_habitat_count);
         }
+        [TestMethod]
         public void RepoCanAddEmployeeToDatabase()
         {
             ConnectMocksToDatastore();
@@ -214,6 +213,7 @@ namespace ZoolandiaRazor.Tests
         [TestMethod]
         public void RepoCanGetAllAnimals()
         {
+            
             animalList.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 });
             animalList.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", HabitatId = 3, Age = 20 });
             animalList.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", HabitatId = 8, Age = 305 });
@@ -226,7 +226,7 @@ namespace ZoolandiaRazor.Tests
 
             List<Animal> actual_animal_list = repo.GetAnimals();
 
-            Assert.AreEqual(expected_animal_list, actual_animal_list);
+            Assert.AreEqual(expected_animal_list.Count(), actual_animal_list.Count());
 
         }
         [TestMethod]
@@ -244,7 +244,7 @@ namespace ZoolandiaRazor.Tests
 
             List<Habitat> actual_habitat_list = repo.GetHabitats();
 
-            Assert.AreEqual(expected_habitat_list, actual_habitat_list);
+            Assert.AreEqual(expected_habitat_list.Count(), actual_habitat_list.Count());
         }
         [TestMethod]
         public void RepoCanGetAllEmployees()
@@ -265,7 +265,7 @@ namespace ZoolandiaRazor.Tests
 
             List<Employee> actual_employee_list = repo.GetEmployees();
 
-            Assert.AreEqual(expected_employee_list, actual_employee_list);
+            Assert.AreEqual(expected_employee_list.Count(), actual_employee_list.Count());
         }
     }
 }
