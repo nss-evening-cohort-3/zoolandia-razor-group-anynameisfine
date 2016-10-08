@@ -15,6 +15,6 @@ namespace ZoolandiaRazor.Models
         [Required]
         public int Age { get; set; }
         [Required]
-        public List<int> Habitats { get; set; }
+        public List<Habitat> Habitats { get; set; }
     }
 }
