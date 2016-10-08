@@ -89,7 +89,7 @@ namespace ZoolandiaRazor.Tests
         {
             ConnectMocksToDatastore();
 
-            List<Animal> habitats = repo.GetHabitats();
+            List<Habitat> habitats = repo.GetHabitats();
             int expected_habitat_count = 0;
             int actual_habitat_count = habitats.Count;
 
