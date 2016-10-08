@@ -19,7 +19,7 @@ namespace ZoolandiaRazor.Models
 
         public List<Animal> Residents { get; set; }
 
-        //public List<Employee> Employees { get; set; }
+        public List<Employee> Employees { get; set; }
 
     }
 }

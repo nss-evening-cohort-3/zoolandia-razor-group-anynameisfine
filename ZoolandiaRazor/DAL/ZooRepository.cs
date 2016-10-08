@@ -48,5 +48,20 @@ namespace ZoolandiaRazor.DAL
         {
             throw new NotImplementedException();
         }
+
+        public List<Employee> GetEmployees()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddEmployee(Employee newEmployee)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Employee FindEmployee(int employeeId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
