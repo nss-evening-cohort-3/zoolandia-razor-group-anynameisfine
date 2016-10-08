@@ -12,7 +12,7 @@ namespace ZoolandiaRazor.Models
         public int HabitatId { get; set; }
 
         [Required]
-        public string HabitatName { get; set; }
+        public string Name { get; set; }
 
         [Required]
         public int HabitatTypeId { get; set; }

@@ -29,7 +29,22 @@ namespace ZoolandiaRazor.DAL
             throw new NotImplementedException();
         }
 
-        public Animal Find(int animalId)
+        public Animal FindAnimal(int animalId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Habitat> GetHabitats()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AddHabitat(Habitat newHabitat)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Habitat FindHabitat(int habitatId)
         {
             throw new NotImplementedException();
         }

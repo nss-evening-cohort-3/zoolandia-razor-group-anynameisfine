@@ -41,4 +41,3 @@ C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\Zooland
 C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\bin\EntityFramework.SqlServer.dll
 C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\bin\EntityFramework.xml
 C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\bin\EntityFramework.SqlServer.xml
-C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\obj\Debug\ZoolandiaRazor.csprojResolveAssemblyReference.cache
