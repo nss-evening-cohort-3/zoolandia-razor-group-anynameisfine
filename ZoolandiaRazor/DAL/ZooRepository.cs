@@ -14,6 +14,11 @@ namespace ZoolandiaRazor.DAL
             this.Context = context;
         }
 
+        public ZooRepository()
+        {
+            Context = new ZooContext();
+        }
+
         public List<Animal> GetAnimals()
         {
             return Context.Animals.ToList();

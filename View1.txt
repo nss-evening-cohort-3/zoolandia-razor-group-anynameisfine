@@ -1,0 +1,11 @@
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Habitats</h2>
+
+@{ foreach (hab in Habitats)
+        <ul>
+            <li>@hab @:-> @hab.residents</li>
+        </ul>
+}

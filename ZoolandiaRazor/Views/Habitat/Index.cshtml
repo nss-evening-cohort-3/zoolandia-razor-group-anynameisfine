@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Habitats";
+}
+
+
+    <ul>
+        @{ foreach (var hab in ViewBag.habitats)
+            {
+                <li>@hab.Name</li>
+            }
+        }
+    </ul>
+

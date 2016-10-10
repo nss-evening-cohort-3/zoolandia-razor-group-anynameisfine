@@ -87,3 +87,6 @@ C:\Users\Paul Williams\workspace\back-end\group-projects\zoolandia-razor-group-a
 C:\Users\Paul Williams\workspace\back-end\group-projects\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\obj\Debug\ZoolandiaRazor.pdb
 C:\Users\Paul Williams\workspace\back-end\group-projects\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\obj\Debug\ZoolandiaRazor.Migrations.InitialCreate.resources
 C:\Users\Paul Williams\workspace\back-end\group-projects\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\obj\Debug\ZoolandiaRazor.csproj.GenerateResource.Cache
+C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\obj\Debug\ZoolandiaRazor.csprojResolveAssemblyReference.cache
+C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\obj\Debug\ZoolandiaRazor.Migrations.InitialCreate.resources
+C:\Users\NSSStudent\Documents\GitHub\zoolandia-razor-group-anynameisfine\ZoolandiaRazor\obj\Debug\ZoolandiaRazor.csproj.GenerateResource.Cache
