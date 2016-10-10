@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>View all of our <s>UGLY</s> employees</h2>
+
+<ul>
+    @{
+        foreach (var employee in ViewBag.Employees)
+        {
+            <li><a class="btn btn-default" asp-controller="Employee" asp-action="Detail(@employee.EmployeeId)">@employee.Name</a></li>
+        }
+    }
+</ul>

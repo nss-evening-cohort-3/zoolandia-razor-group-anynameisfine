@@ -9,6 +9,11 @@ namespace ZoolandiaRazor.DAL
     public class ZooRepository
     {
         public ZooContext Context { get; set; }
+        public ZooRepository()
+        {
+            Context = new ZooContext();
+        }
+
         public ZooRepository(ZooContext context)
         {
             this.Context = context;

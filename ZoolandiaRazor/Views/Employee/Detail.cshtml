@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>@ViewBag.Employee.Name</h2>
+
+<p>Age: @ViewBag.Employee.Age</p>
+<p>
+    Habitats
+    <ul>
+        @{
+            foreach (var habitat in ViewBag.Employee.Habitats)
+            {
+                <li>@habitat.Name</li>
+            }
+        }
+    </ul>
+</p>
+
