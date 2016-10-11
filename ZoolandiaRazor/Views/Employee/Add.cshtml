@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+
+<h2>Add Employee</h2>
+
+<form action="/Employee/Add" method="POST">
+    <label for="Name">Name:</label>
+    <input type="text" name="Name" placeholder="Employee Name" />
+    <br />
+    <label for="Age">Age:</label>
+    <input type="number" name="Age" placeholder="Employee Age" />
+    <br />
+    <label>Habitats:</label>
+    <select multiple>
+        @{
+            foreach (var habitat in ViewBag.Habitat)
+            {
+                <option value="@habitat">@habitat.Name</option>
+            }
+        }
+    </select>
+    <br />
+    <button type="submit">Submit</button>
+</form>

@@ -4,12 +4,13 @@
 }
 
 <h2>View all of our <s>UGLY</s> employees</h2>
-
+<a class="btn btn-default" asp-controller="Employee" asp-action="Add">Add Another Idiot</a>
+<br />
 <ul>
     @{
         foreach (var employee in ViewBag.Employees)
         {
-            <li><a class="btn btn-default" asp-controller="Employee" asp-action="Detail(@employee.EmployeeId)">@employee.Name</a></li>
+            <li><a class="btn btn-default" asp-controller="Employee" asp-action="Detail" asp-route-id="@employee.EmployeeId">@employee.Name</a></li>
         }
     }
 </ul>
