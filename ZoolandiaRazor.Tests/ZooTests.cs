@@ -124,7 +124,7 @@ namespace ZoolandiaRazor.Tests
         public void RepoCanAddAnimalToDatabase()
         {
             ConnectMocksToDatastore();
-            Animal newAnimal = new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 };
+            Animal newAnimal = new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 8 };
 
             repo.AddAnimal(newAnimal);
 
@@ -163,9 +163,9 @@ namespace ZoolandiaRazor.Tests
         [TestMethod]
         public void RepoCanFindAnimal()
         {
-            animalList.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 });
-            animalList.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", HabitatId = 3, Age = 20 });
-            animalList.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", HabitatId = 8, Age = 305 });
+            animalList.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 8 });
+            animalList.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 20 });
+            animalList.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 305 });
             ConnectMocksToDatastore();
 
             int animalId = 2;
@@ -214,15 +214,15 @@ namespace ZoolandiaRazor.Tests
         public void RepoCanGetAllAnimals()
         {
             
-            animalList.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 });
-            animalList.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", HabitatId = 3, Age = 20 });
-            animalList.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", HabitatId = 8, Age = 305 });
+            animalList.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 8 });
+            animalList.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 20 });
+            animalList.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 305 });
             ConnectMocksToDatastore();
 
             List<Animal> expected_animal_list = new List<Animal>();
-            expected_animal_list.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", HabitatId = 5, Age = 8 });
-            expected_animal_list.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", HabitatId = 3, Age = 20 });
-            expected_animal_list.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", HabitatId = 8, Age = 305 });
+            expected_animal_list.Add(new Animal { AnimalId = 1, Name = "x", CommonName = "y", ScientificName = "z", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 8 });
+            expected_animal_list.Add(new Animal { AnimalId = 2, Name = "a", CommonName = "b", ScientificName = "c", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 20 });
+            expected_animal_list.Add(new Animal { AnimalId = 3, Name = "q", CommonName = "r", ScientificName = "s", Habitat = new Habitat { HabitatId = 1, Name = "x", HabitatTypeId = 3 }, Age = 305 });
 
             List<Animal> actual_animal_list = repo.GetAnimals();
 

@@ -23,7 +23,7 @@ namespace ZoolandiaRazor.Models
         public string ScientificName { get; set; }
 
         [Required]
-        public int HabitatId { get; set; }
+        public virtual Habitat Habitat { get; set; }
 
         [Required]
         public int Age { get; set; }
