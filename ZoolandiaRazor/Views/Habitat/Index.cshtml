@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Habitats";
+}
+
+<h2>Habitats</h2>
+
+
+    @foreach (var hab in ViewBag.habitats)
+    {
+        <a asp-controller="Product" asp-action="Add" class="btn btn-default">@hab.Name</a>
+    }
+
+
+
