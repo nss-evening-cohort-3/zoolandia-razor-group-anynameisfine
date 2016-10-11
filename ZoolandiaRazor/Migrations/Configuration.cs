@@ -1,5 +1,6 @@
 namespace ZoolandiaRazor.Migrations
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,12 @@ namespace ZoolandiaRazor.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+            context.Habitats.AddOrUpdate(new Habitat { Name = "Forest", HabitatTypeId = 1 },
+                                         new Habitat { Name = "Jungle", HabitatTypeId = 2 },
+                                         new Habitat { Name = "Plains", HabitatTypeId = 3 },
+                                         new Habitat { Name = "Ocean", HabitatTypeId = 4 }
+                                        );
         }
     }
 }
