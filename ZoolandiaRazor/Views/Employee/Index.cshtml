@@ -4,13 +4,14 @@
 }
 
 <h2>View all of our <s>UGLY</s> employees</h2>
-<a class="btn btn-default" asp-controller="Employee" asp-action="Add">Add Another Idiot</a>
+@Html.ActionLink("Add Another Idiot", "Add", "Employee", new { @class = "btn btn-default" })
 <br />
 <ul>
     @{
         foreach (var employee in ViewBag.Employees)
         {
-            <li><a class="btn btn-default" asp-controller="Employee" asp-action="Detail" asp-route-id="@employee.EmployeeId">@employee.Name</a></li>
+            string Name = employee.Name;
+            <li>@Html.ActionLink(Name, "Details", "Employee", new { id = employee.EmployeeId }, new { @class = "btn btn-default" })</li>
         }
     }
 </ul>
