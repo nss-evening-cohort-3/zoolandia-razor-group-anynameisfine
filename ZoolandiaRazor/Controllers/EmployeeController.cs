@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ZoolandiaRazor.DAL;
+using ZoolandiaRazor.Models;
 
 namespace ZoolandiaRazor.Controllers
 {
@@ -22,6 +23,24 @@ namespace ZoolandiaRazor.Controllers
         {
             ViewBag.Employee = repo.FindEmployee(id);
             return View();
+        }
+
+        public ActionResult Add()
+        {
+            ViewBag.Habitat = repo.GetHabitats();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Add(Employee emp)
+        {
+            if (ModelState.IsValid)
+            {
+                repo.AddEmployee(emp);
+                return RedirectToAction("Index");
+            }
+
+            return View(emp);
         }
     }
 }
