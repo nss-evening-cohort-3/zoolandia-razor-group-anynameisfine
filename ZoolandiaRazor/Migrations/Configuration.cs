@@ -28,11 +28,19 @@ namespace ZoolandiaRazor.Migrations
             //    );
             //
 
-            context.Habitats.AddOrUpdate(new Habitat { Name = "Forest", HabitatTypeId = 1 },
-                                         new Habitat { Name = "Jungle", HabitatTypeId = 2 },
-                                         new Habitat { Name = "Plains", HabitatTypeId = 3 },
-                                         new Habitat { Name = "Ocean", HabitatTypeId = 4 }
-                                        );
+            var Forest = new Habitat { Name = "Forest", HabitatTypeId = 1 };
+            var Jungle = new Habitat { Name = "Jungle", HabitatTypeId = 2 };
+            var Plains = new Habitat { Name = "Plains", HabitatTypeId = 3 };
+            var Ocean = new Habitat { Name = "Ocean", HabitatTypeId = 4 };
+            context.Habitats.AddOrUpdate(
+                p => p.Name, Plains, Ocean, Jungle, Forest
+            );
+            var Bulbasaur = new Animal { Name = "Bulbasaur", CommonName = "Ivysaur", ScientificName = "Venusaur", Age = 1, Habitat = Jungle };
+            var Charmander = new Animal { Name = "Charmander", CommonName = "Charmeleon", ScientificName = "Charizard", Age = 2, Habitat = Forest };
+            var Squirtle = new Animal { Name = "Squirtle", CommonName = "Wartortle", ScientificName = "Blastiose", Age = 3, Habitat = Ocean };
+            context.Animals.AddOrUpdate(
+                p => p.Name, Bulbasaur, Charmander, Squirtle
+            );
         }
     }
 }

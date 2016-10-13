@@ -1,7 +1,8 @@
-*/packages
+﻿*/packages
 .vs/
 .vscode/
 */project.lock.json
+*/App_Data
 
 ###################
 # compiled source #

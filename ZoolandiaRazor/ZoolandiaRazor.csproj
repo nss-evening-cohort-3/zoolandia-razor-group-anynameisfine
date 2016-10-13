@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201610081748503_InitialCreate.Designer.cs">
       <DependentUpon>201610081748503_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610132318514_Migration2.cs" />
+    <Compile Include="Migrations\201610132318514_Migration2.Designer.cs">
+      <DependentUpon>201610132318514_Migration2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -200,6 +204,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610081748503_InitialCreate.resx">
       <DependentUpon>201610081748503_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610132318514_Migration2.resx">
+      <DependentUpon>201610132318514_Migration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
