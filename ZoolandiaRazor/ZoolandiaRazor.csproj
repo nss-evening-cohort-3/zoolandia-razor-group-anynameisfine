@@ -141,6 +141,10 @@
     <Compile Include="Migrations\201610081748503_InitialCreate.Designer.cs">
       <DependentUpon>201610081748503_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201610132318514_Migration2.cs" />
+    <Compile Include="Migrations\201610132318514_Migration2.Designer.cs">
+      <DependentUpon>201610132318514_Migration2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -183,10 +187,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Habitat\Index.cshtml" />
+    <Content Include="Views\Animal\Index.cshtml" />
+    <Content Include="Views\Animal\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Animal\" />
     <Folder Include="Views\Employee\" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +205,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201610081748503_InitialCreate.resx">
       <DependentUpon>201610081748503_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610132318514_Migration2.resx">
+      <DependentUpon>201610132318514_Migration2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
