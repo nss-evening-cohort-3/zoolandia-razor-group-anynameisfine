@@ -15,22 +15,12 @@ namespace ZoolandiaRazor.Migrations
                         Name = c.String(nullable: false),
                         CommonName = c.String(),
                         ScientificName = c.String(nullable: false),
-                        HabitatId = c.Int(nullable: false),
                         Age = c.Int(nullable: false),
+                        Habitat_HabitatId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AnimalId)
-                .ForeignKey("dbo.Habitats", t => t.HabitatId, cascadeDelete: true)
-                .Index(t => t.HabitatId);
-            
-            CreateTable(
-                "dbo.Employees",
-                c => new
-                    {
-                        EmployeeId = c.Int(nullable: false, identity: true),
-                        Name = c.String(nullable: false),
-                        Age = c.Int(nullable: false),
-                    })
-                .PrimaryKey(t => t.EmployeeId);
+                .ForeignKey("dbo.Habitats", t => t.Habitat_HabitatId, cascadeDelete: true)
+                .Index(t => t.Habitat_HabitatId);
             
             CreateTable(
                 "dbo.Habitats",
@@ -43,31 +33,41 @@ namespace ZoolandiaRazor.Migrations
                 .PrimaryKey(t => t.HabitatId);
             
             CreateTable(
-                "dbo.HabitatEmployees",
+                "dbo.Employees",
                 c => new
                     {
-                        Habitat_HabitatId = c.Int(nullable: false),
-                        Employee_EmployeeId = c.Int(nullable: false),
+                        EmployeeId = c.Int(nullable: false, identity: true),
+                        Name = c.String(nullable: false),
+                        Age = c.Int(nullable: false),
                     })
-                .PrimaryKey(t => new { t.Habitat_HabitatId, t.Employee_EmployeeId })
-                .ForeignKey("dbo.Habitats", t => t.Habitat_HabitatId, cascadeDelete: true)
+                .PrimaryKey(t => t.EmployeeId);
+            
+            CreateTable(
+                "dbo.EmployeeHabitats",
+                c => new
+                    {
+                        Employee_EmployeeId = c.Int(nullable: false),
+                        Habitat_HabitatId = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => new { t.Employee_EmployeeId, t.Habitat_HabitatId })
                 .ForeignKey("dbo.Employees", t => t.Employee_EmployeeId, cascadeDelete: true)
-                .Index(t => t.Habitat_HabitatId)
-                .Index(t => t.Employee_EmployeeId);
+                .ForeignKey("dbo.Habitats", t => t.Habitat_HabitatId, cascadeDelete: true)
+                .Index(t => t.Employee_EmployeeId)
+                .Index(t => t.Habitat_HabitatId);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.Animals", "HabitatId", "dbo.Habitats");
-            DropForeignKey("dbo.HabitatEmployees", "Employee_EmployeeId", "dbo.Employees");
-            DropForeignKey("dbo.HabitatEmployees", "Habitat_HabitatId", "dbo.Habitats");
-            DropIndex("dbo.HabitatEmployees", new[] { "Employee_EmployeeId" });
-            DropIndex("dbo.HabitatEmployees", new[] { "Habitat_HabitatId" });
-            DropIndex("dbo.Animals", new[] { "HabitatId" });
-            DropTable("dbo.HabitatEmployees");
-            DropTable("dbo.Habitats");
+            DropForeignKey("dbo.Animals", "Habitat_HabitatId", "dbo.Habitats");
+            DropForeignKey("dbo.EmployeeHabitats", "Habitat_HabitatId", "dbo.Habitats");
+            DropForeignKey("dbo.EmployeeHabitats", "Employee_EmployeeId", "dbo.Employees");
+            DropIndex("dbo.EmployeeHabitats", new[] { "Habitat_HabitatId" });
+            DropIndex("dbo.EmployeeHabitats", new[] { "Employee_EmployeeId" });
+            DropIndex("dbo.Animals", new[] { "Habitat_HabitatId" });
+            DropTable("dbo.EmployeeHabitats");
             DropTable("dbo.Employees");
+            DropTable("dbo.Habitats");
             DropTable("dbo.Animals");
         }
     }

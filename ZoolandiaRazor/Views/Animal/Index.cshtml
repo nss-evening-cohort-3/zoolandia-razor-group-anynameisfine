@@ -4,13 +4,14 @@
 
 <h2>Index</h2>
 
-<h2>Hey look we got animals please visit the zoo we need visitors so many visitorssssssss</h2>
+<h2>Hey look we got animals please visit the zoo!</h2>
 
 <ul>
     @{
         foreach (var animal in ViewBag.Animals)
         {
-            <li>@Html.ActionLink("Animal", "Details", "Animal", new { id = animal.AnimalId }, new { @class = "btn btn-default" })</li>
+            string name = animal.Name;
+            <li>@Html.ActionLink( name , "Details", "Animal", new { id = animal.AnimalId }, new { @class = "btn btn-default" })</li>
             //<li><a class="btn btn-default" asp-controller="Animal" asp-action="Detail(@animal.AnimalId)">@animal.Name</a></li>
         }
     }
