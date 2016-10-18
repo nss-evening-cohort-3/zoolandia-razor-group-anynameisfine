@@ -8,7 +8,7 @@
 
     @foreach (var hab in ViewBag.habitats)
     {
-        <a asp-controller="Product" asp-action="Add" class="btn btn-default">@hab.Name</a>
+        <a href="/Habitat/Details/@hab.HabitatId" class="btn btn-default">@hab.Name has @hab.Residents.Count() items</a>
     }
 
 
